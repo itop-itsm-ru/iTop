@@ -681,6 +681,10 @@ class ormLinkSet implements iDBObjectSetIterator, Iterator, SeekableIterator
 				{
 					$oLink->DBDelete();
 				}
+				elseif ($oAttDef->GetEditMode() === LINKSET_EDITMODE_INPLACE)
+				{
+					$oLink->DBDelete();
+				}
 				else
 				{
 					$oExtKeyToRemote = MetaModel::GetAttributeDef($this->sClass, $sExtKeyToMe);
